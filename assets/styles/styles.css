@@ -29,6 +29,7 @@ html {
   }
   body {
     display: flex;
+    min-height: 100vh;
     flex-direction: column;
   
   }
@@ -39,7 +40,32 @@ html {
 	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 	box-sizing: border-box;
 }
+.header{
+    background: var(--color-blue);
+    color: var(--white);
+    height: 9rem;
+    box-shadow: 0 4px 10px var(--box-shadow-color);
+    backdrop-filter: blur(10px);
+    display: flex;
+    padding: 0 2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.header h1{
 
+    font-weight: 700;
+}
+.header .nav-links{
+    width: 90%;
+}
+.header .nav-links li{
+    list-style: none;
+}
+.header .nav-links li a{
+   text-decoration: none;
+   color: var(--white);
+    font-size: var(--md);
+}
 .container {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, var(--color-blue), var(--color-grey));
@@ -113,6 +139,8 @@ input[type="submit"]:hover {
 }
 .main {
     flex: 1;
+    height: 100vh;
+    display: flex;
 }
 
 /* Estilos para el footer */
@@ -123,6 +151,7 @@ input[type="submit"]:hover {
     width: 100%;
     bottom: 0;
     left: 0;
+    top: 0;
     right: 0;
     height: 8rem;
     position: relative; /* Se mantendrá abajo del contenido */
@@ -130,4 +159,41 @@ input[type="submit"]:hover {
     justify-content: center;
     color: var(--black);
     text-align: center;
+    
+
+    padding: 0;
+    z-index: 100;
+
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table thead, .table tfoot{
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+}
+
+.table th, .table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.table tbody tr:hover {
+    background-color: #e9ecef;
+    transition: background-color 0.3s ease;
+}
+
+.table th {
+    font-weight: bold;
 }
